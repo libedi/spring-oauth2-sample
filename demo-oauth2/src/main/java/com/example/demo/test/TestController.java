@@ -29,6 +29,8 @@ public class TestController {
 	 * http://localhost:8080/oauth/token?grant_type=refresh_token&scope=read&refresh_token=리프레쉬토큰
 	 * -> refresh-token은 계속 재사용 가능.
 	 * 
+	 * *** 사실 이 메서드는 클라이언트의 redirect-uri 부분이다.
+	 * *** 따라서 받아온 code로 아래와 같이 인증하여 access-token을 받아와 api를 수행한다.
 	 */
 	@RequestMapping("authorization-code")
 	public String authorizationCodeTest(@RequestParam("code") String code) {
