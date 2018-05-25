@@ -19,6 +19,11 @@ public class DemoOauth2Application {
 		SpringApplication.run(DemoOauth2Application.class, args);
 	}
 	
+	/**
+	 * declare JdbcTokenStore bean
+	 * @param dataSource
+	 * @return
+	 */
 	@Bean
 	public TokenStore jdbcTokenStore(final DataSource dataSource) {
 		return new JdbcTokenStore(dataSource);
